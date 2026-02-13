@@ -1,0 +1,300 @@
+[
+  {
+    "category": "basic_needs",
+    "name": "UCI Basic Needs Center – FRESH Pantry",
+    "location": "800 W Peltason Dr, Irvine, CA 92617 (check source_url for current pantry access/pickup details)",
+    "contact_info": "Basic Needs Center website",
+    "description": "Provides emergency food and basic necessities support for UCI students.",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://basicneeds.uci.edu/fresh-pantry/"
+  },
+  {
+  "category": "basic_needs",
+  "name": "UCI Basic Needs Center – Mobile Food Pantry",
+  "location": "Varies by date: Verano, Palo Verde, Arroyo Vista (check source_url for schedule)",
+  "contact_info": "Phone: (949) 824-0607 | Email: basicneeds@uci.edu",
+  "description": "Mobile pantry distributions that bring food closer to students on scheduled days and locations.",
+  "target_audience": "Current UCI undergraduate and graduate students",
+  "source_url": "https://basicneeds.uci.edu/fresh-pantry/"
+  },
+
+  {
+    "category": "basic_needs",
+    "name": "UCI Basic Needs Center – CalFresh Application Assistance",
+    "location": "800 W Peltason Dr, Irvine, CA 92617 (appointments + support. See source_url for process)",
+    "contact_info": "Email: calfresh@uci.edu | Phone/Text: (949) 473-2806 (Mon–Fri 8am–4pm)",
+    "description": "Book an appointment with a trained CalFresh advocate for step-by-step help applying; students can also apply on their own and email questions.",
+    "target_audience": "Current UCI undergraduate and graduate students seeking grocery/EBT support",
+    "source_url": "https://basicneeds.uci.edu/calfresh-application-process/"
+  },
+  {
+    "category": "health",
+    "name": "UCI Counseling Center – Crisis Support (24/7)",
+    "location": "203 Student Services 1, Irvine, CA 92697-2200 (crisis care available 24/7 by phone)",
+    "contact_info": "Call (949) 824-6457 (after hours, select option 2 for crisis support)",
+    "description": "24/7 crisis support for UCI students experiencing urgent mental health or crisis situations; also provides emergency resource links (911, 988).",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://counseling.uci.edu/contact-us/emergency-assistance/"
+  },
+  {
+    "category": "health",
+    "name": "UCI Counseling Center – Referral & Resource Support (Case Management)",
+    "location": "203 Student Services 1, Irvine, CA 92697-2200",
+    "contact_info": "Call (949) 824-6457 and request a Case Manager for referral/resource support",
+    "description": "Case management support that helps students connect to appropriate mental health and support resources (including off-campus referrals) and navigate next steps.",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://counseling.uci.edu/services/referral-and-resource-support/"
+  },
+  {
+    "category": "health",
+    "name": "UCI Student Health Center",
+    "location": "501 Student Health, Irvine, CA 92697-5200",
+    "contact_info": "Phone: (949) 824-5301",
+    "description": "Medical services and health support for registered UCI students. Hours: Mon/Tue/Thu/Fri 8am–5pm; Wed 9am–5pm; Sat 9am–1pm (seasonal). For emergencies call 911.",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://studenthealth.uci.edu/"
+  },
+  {
+    "category": "accommodations",
+    "name": "UCI Disability Services Center (DSC)",
+    "location": "Continuing Education, 234 Pereira Dr, Irvine, CA 92697",
+    "contact_info": "Phone: 949-824-7494 | Email: dsc@uci.edu | Fax: 949-824-3410 | Office Hours: Mon–Fri 8:00am–5:00pm",
+    "description": "Coordinates academic accommodations and disability-related support services for students with documented needs.",
+    "target_audience": "UCI students (undergraduate and graduate) seeking disability accommodations",
+    "source_url": "https://dsc.uci.edu/contact/"
+  },
+  {
+    "category": "career",
+    "name": "UCI Division of Career Pathways",
+    "location": "100 Student Services 1, Irvine, CA 92697-2075",
+    "contact_info": "Phone: (949) 824-6881 | Email: career@uci.edu",
+    "description": "Career services including advising, internship/job support, and career programming.",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://career.uci.edu/about/contact-us/"
+  },
+  {
+  "category": "financial",
+  "name": "UCI Office of Financial Aid and Scholarships (OFAS) – Undergraduate & Graduate",
+  "location": "102 Aldrich Hall, Irvine, CA 92697",
+  "contact_info": "Phone: (949) 824-8262 | Email: finaid@uci.edu",
+  "description": "Financial aid support for undergraduate and graduate students, including questions about aid, loans, and scholarships; includes appointment and phone help options.",
+  "target_audience": "UCI undergraduate and graduate students (excluding professional programs: Business, Law, Medicine)",
+  "source_url": "https://www.ofas.uci.edu/contact-us/index.php"
+},
+{
+  "category": "financial",
+  "name": "UCI Merage School of Business – Financial Aid",
+  "location": "SB1-4301, Paul Merage School of Business, Irvine, CA 92697-3125",
+  "contact_info": "Phone: (949) 824-7967 | Email: meragefinaid@uci.edu",
+  "description": "Financial aid support for Merage School of Business graduate students.",
+  "target_audience": "UCI Merage School of Business graduate students (MBA and related programs)",
+  "source_url": "https://merage.uci.edu/"
+},
+{
+  "category": "financial",
+  "name": "UCI School of Law – Financial Aid",
+  "location": "401 E. Peltason Drive, Suite 1000, Irvine, CA 92697-8000",
+  "contact_info": "Phone: (949) 824-8080 | Email: finaid@law.uci.edu",
+  "description": "Financial aid support for School of Law students, including tuition and aid information.",
+  "target_audience": "UCI School of Law students (JD program)",
+  "source_url": "https://law.uci.edu/admission/tuition-aid/"
+},
+{
+  "category": "financial",
+  "name": "UCI School of Medicine – Financial Aid",
+  "location": "836 Medical Education Building, Irvine, CA 92697-4089",
+  "contact_info": "Phone: (949) 824-6476 | Email: cmfao@uci.edu",
+  "description": "Financial aid and educational financing support for School of Medicine students.",
+  "target_audience": "UCI School of Medicine students (MD program)",
+  "source_url": "https://www.ofas.uci.edu/content/Medical.aspx"
+},
+  {
+    "category": "academic",
+    "name": "UCI Writing Center (Center for Excellence in Writing & Communication)",
+    "location": "193 Science Library, Irvine, CA 92627-5695 (satellite locations: Anteater Learning Pavilion, Langson Library)",
+    "contact_info": "Phone: (949) 824-8949 | Email: writing-center@uci.edu | Appointments: ZotPASS",
+    "description": "Writing consultations, workshops, and support for coursework, statements, and other writing projects.",
+    "target_audience": "UCI students (undergraduate and graduate) and postdoctoral scholars",
+    "source_url": "https://writingcenter.uci.edu/about/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Learning & Academic Resource Center (LARC)",
+    "location": "3500 Anteater Learning Pavilion, Irvine, CA 92697-3850",
+    "contact_info": "Phone: (949) 824-6451 | Email: larc@uci.edu | Appointments: ZotPASS",
+    "description": "Academic support including tutorials (supplemental instruction), After Dark drop-in tutoring, workshops, and 1:1 academic coaching.",
+    "target_audience": "UCI students (primarily undergraduates)",
+    "source_url": "https://larc.uci.edu/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Claire Trevor School of the Arts – Academic Advising",
+    "location": "MAB 101, 4000 Mesa Rd, Irvine, CA 92697-2775",
+    "contact_info": "Phone: (949) 824-4339 | Email: artscounselor@uci.edu",
+    "description": "Academic advising for Arts students including academic planning, course scheduling, degree requirements, and study plans.",
+    "target_audience": "UCI Claire Trevor School of the Arts undergraduate students",
+    "source_url": "https://www.arts.uci.edu/student-affairs-advising"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Charlie Dunlop School of Biological Sciences – Academic Advising",
+    "location": "1011 Biological Sciences III, Irvine, CA 92697",
+    "contact_info": "Phone: (949) 824-5318 | Email: BioSciAdvising@uci.edu",
+    "description": "Academic advising for Biological Sciences students including degree requirements, course planning, and pre-health advising.",
+    "target_audience": "UCI Biological Sciences undergraduate students",
+    "source_url": "https://undergraduate.bio.uci.edu/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Paul Merage School of Business – Academic Advising",
+    "location": "SB1 Suite 2500, 4293 Pereira Drive, Irvine, CA 92697-3125",
+    "contact_info": "Email: ugprograms@merage.uci.edu (advising not available by phone)",
+    "description": "Academic advising for Business students including DegreeWorks guidance, course planning, and major/minor requirements.",
+    "target_audience": "UCI Merage School of Business undergraduate students",
+    "source_url": "https://merage.uci.edu/programs/undergraduate/contact-us.html"
+  },
+  {
+    "category": "academic",
+    "name": "UCI School of Education – Academic Advising",
+    "location": "2200 Education Building, Irvine, CA 92697-5500",
+    "contact_info": "Phone: (949) 824-5312 | Email: educadvising@uci.edu",
+    "description": "Academic advising for Education Sciences students including degree planning, course scheduling, and career preparation.",
+    "target_audience": "UCI School of Education undergraduate students",
+    "source_url": "https://advise.education.uci.edu/contact-us.html"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Samueli School of Engineering – Academic Advising",
+    "location": "415 E Peltason Dr #286, Multipurpose Science and Technology Building, Irvine, CA 92697-2750",
+    "contact_info": "Phone: (949) 824-4334 | Email: ugengr@uci.edu",
+    "description": "Academic advising for Engineering students including degree requirements, prerequisite clearance, and course planning.",
+    "target_audience": "UCI Samueli School of Engineering undergraduate students",
+    "source_url": "https://undergraduate.eng.uci.edu/advising/walk-in-advising/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI School of Humanities – Academic Advising",
+    "location": "143 Humanities Instructional Building (HIB), Irvine, CA 92697-3380",
+    "contact_info": "Phone: (949) 824-5132 | Email: humadvising@uci.edu",
+    "description": "Academic advising for Humanities students including degree requirements, course planning, and academic support.",
+    "target_audience": "UCI School of Humanities undergraduate students",
+    "source_url": "https://hq.humanities.uci.edu/undergrad/about/chat.php"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Campuswide Honors Collegium – Academic Advising",
+    "location": "508 Science Library, Irvine, CA 92697-5680",
+    "contact_info": "Phone: (949) 824-5461 | Email: honors@uci.edu",
+    "description": "Academic advising for Honors students including honors requirements, course offerings, research/thesis support, and honors opportunities.",
+    "target_audience": "UCI Campuswide Honors Collegium students",
+    "source_url": "https://honors.uci.edu/chchat/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Donald Bren School of ICS – Academic Advising",
+    "location": "ICS Building 1, Suite 352, Irvine, CA 92697-3430",
+    "contact_info": "Phone: (949) 824-5156 | Email: ucounsel@uci.edu",
+    "description": "Academic advising for ICS students including degree requirements, course planning, change of major support, and academic concerns.",
+    "target_audience": "UCI School of Information and Computer Sciences undergraduate students",
+    "source_url": "https://ics.uci.edu/academics/undergrad/contact/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Sue & Bill Gross School of Nursing – Academic Advising",
+    "location": "See source page for chat scheduling",
+    "contact_info": "Email: nssao@uci.edu | Live chat available on website",
+    "description": "Academic advising for Nursing students; contact via email or online chat system.",
+    "target_audience": "UCI School of Nursing undergraduate students",
+    "source_url": "https://nursing.uci.edu/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI School of Pharmacy & Pharmaceutical Sciences – Academic Advising",
+    "location": "209 Steinhaus Hall, Bldg 502, Irvine, CA 92697",
+    "contact_info": "Phone: (949) 824-1991 | Email: pharmsci@uci.edu",
+    "description": "Academic advising for Pharmaceutical Sciences students including degree requirements, course planning, and career guidance.",
+    "target_audience": "UCI School of Pharmacy & Pharmaceutical Sciences undergraduate students",
+    "source_url": "https://pharmsci.uci.edu/for-current-students/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI School of Physical Sciences – Academic Advising",
+    "location": "134 Rowland Hall, Irvine, CA 92697-4675",
+    "contact_info": "Email: pssazot@uci.edu",
+    "description": "Academic advising for Physical Sciences students (Chemistry, Earth System Science, Mathematics, Physics) including degree requirements and course planning.",
+    "target_audience": "UCI School of Physical Sciences undergraduate students",
+    "source_url": "https://ps.uci.edu/undergraduates/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Program in Public Health – Academic Advising",
+    "location": "See source page for chat scheduling",
+    "contact_info": "Email: phuao@uci.edu | Live chat available on website",
+    "description": "Academic advising for Public Health students; contact via email or online chat system.",
+    "target_audience": "UCI Public Health undergraduate students",
+    "source_url": "https://publichealth.uci.edu/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI School of Social Ecology – Academic Advising",
+    "location": "5300 Social and Behavioral Sciences Gateway, Irvine, CA 92697-7050",
+    "contact_info": "Email: sepeer@uci.edu",
+    "description": "Academic advising for Social Ecology students, including degree requirements, course planning, and ZotChat live advising.",
+    "target_audience": "UCI School of Social Ecology undergraduate students",
+    "source_url": "https://students.soceco.uci.edu/pages/zot-chat"
+  },
+  {
+    "category": "academic",
+    "name": "UCI School of Social Sciences – Academic Advising",
+    "location": "1201 SBSG, 3151 Social Sciences Plaza, Irvine, CA 92697-5100",
+    "contact_info": "Phone: (949) 824-2766 | Email: socsci@uci.edu",
+    "description": "Academic advising for Social Sciences students, including walk-in advising, Zoom drop-ins, and scheduled appointments.",
+    "target_audience": "UCI School of Social Sciences undergraduate students",
+    "source_url": "https://www.undergrad.socsci.uci.edu/ssusa/advising.php"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Undergraduate/Undeclared Advising Program",
+    "location": "Building A, 231 Pereira Drive, Irvine, CA 92617",
+    "contact_info": "Phone: (949) 824-6987 | Email: uuadvise@uci.edu",
+    "description": "Academic advising for undeclared students, including major exploration, academic planning, and transition support until a major is selected.",
+    "target_audience": "UCI undergraduate students without a declared major",
+    "source_url": "https://uu.uci.edu/about/contacts/"
+  },
+  {
+    "category": "housing",
+    "name": "UCI Student Housing – General Contact",
+    "location": "557 E. Peltason – Laurelin Tower, Suite 2301, Irvine, CA 92697-3250",
+    "contact_info": "Phone: (949) 824-6811 | Email: housing@uci.edu",
+    "description": "General housing information and support, including on-campus and off-campus housing options, applications, and resident services.",
+    "target_audience": "UCI students (undergraduate and graduate) seeking housing help",
+    "source_url": "https://housing.uci.edu/about/contact/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI International Center",
+    "location": "G302 UCI Student Center, Irvine, CA 92697-5255",
+    "contact_info": "Phone: (949) 824-7249 | Email: internationalcenter@uci.edu",
+    "description": "Immigration and visa support for international students, including SEVIS, I-20 documents, work authorization (OPT/CPT), travel signatures, and enrollment verification.",
+    "target_audience": "UCI international students (F-1/J-1 visa holders) and visiting exchange students",
+    "source_url": "https://ic.uci.edu/about-us/contact-information-and-directions/"
+  },
+  {
+    "category": "academic",
+    "name": "UCI Libraries – Langson Library",
+    "location": "Langson Library, UCI Campus (Check Out Desk on 2nd floor)",
+    "contact_info": "Phone: (949) 824-6842 | Email: Use 'Email Library' on website",
+    "description": "Library services including study room reservations, research support, course reserves, borrowing, interlibrary loan, and printing/scanning.",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://www.lib.uci.edu/langson"
+  },
+  {
+    "category": "recreation",
+    "name": "UCI Campus Recreation – Anteater Recreation Center (ARC)",
+    "location": "680 California Ave, Irvine, CA 92697",
+    "contact_info": "ARC Phone: 949-824-1149 | Email: campus.recreation@uci.edu",
+    "description": "Recreation and fitness facilities, programs, and hours for student wellness and campus life.",
+    "target_audience": "UCI students (undergraduate and graduate)",
+    "source_url": "https://www.campusrec.uci.edu/about/contact.html"
+  }
+]
