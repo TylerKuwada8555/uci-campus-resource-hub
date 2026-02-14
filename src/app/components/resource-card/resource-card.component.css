@@ -1,0 +1,180 @@
+@reference "tailwindcss";
+
+:host {
+    display: block;
+    height: 100%;
+}
+
+.card {
+    @apply relative rounded-2xl p-5 cursor-pointer transition-all duration-300 flex flex-col;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card.expanded {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 100, 164, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.card-top {
+    @apply flex items-center mb-1;
+}
+
+.card-header {
+    @apply flex items-center gap-2;
+}
+
+.category-icon {
+    @apply text-base;
+}
+
+.category-label {
+    @apply text-xs font-semibold uppercase tracking-wider;
+    color: rgba(0, 180, 255, 0.7);
+}
+
+/* Badges */
+.badges {
+    @apply flex flex-wrap gap-1.5 mb-3;
+}
+
+.badge {
+    @apply text-[10px] font-bold uppercase tracking-wide py-1 px-2.5 rounded-full;
+}
+
+.badge-open {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-urgent {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.badge-popular {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.badge-essential {
+    background: rgba(255, 210, 0, 0.15);
+    color: #FFD200;
+    border: 1px solid rgba(255, 210, 0, 0.25);
+}
+
+/* Title */
+.card-title {
+    @apply text-base font-bold text-white mb-2 leading-snug;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Description */
+.card-description {
+    @apply text-sm leading-relaxed;
+    color: rgba(191, 219, 254, 0.6);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.card.expanded .card-description {
+    -webkit-line-clamp: unset;
+}
+
+/* Details */
+.card-details {
+    @apply mt-4 pt-4 space-y-3;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeInDetails 0.3s ease-out;
+}
+
+@keyframes fadeInDetails {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-row {
+    @apply flex items-start gap-2.5;
+}
+
+.detail-icon {
+    @apply w-4 h-4 flex-shrink-0 mt-0.5;
+    color: rgba(0, 180, 255, 0.5);
+}
+
+.detail-text {
+    @apply text-xs leading-relaxed;
+    color: rgba(191, 219, 254, 0.55);
+}
+
+/* Action button */
+.action-btn {
+    @apply w-full mt-4 py-3 px-4 rounded-xl font-semibold text-white text-sm flex items-center justify-center gap-2 cursor-pointer transition-all duration-300;
+    background: linear-gradient(135deg, #0064A4, #0080d0);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 100, 164, 0.3);
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 100, 164, 0.4);
+}
+
+.action-icon {
+    @apply w-4 h-4;
+}
+
+/* Expand hint */
+.expand-hint {
+    @apply flex justify-center mt-3;
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.expand-icon {
+    @apply w-4 h-4;
+    color: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .expand-icon {
+    color: rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+}

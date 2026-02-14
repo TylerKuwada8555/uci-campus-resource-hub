@@ -1,0 +1,233 @@
+@reference "tailwindcss";
+
+.home-container {
+    @apply min-h-screen flex flex-col relative;
+    background: linear-gradient(180deg, #0c1220 0%, #14233c 50%, #0d3b66 100%);
+    padding-bottom: 90px;
+}
+
+/* HEADER */
+.header {
+    @apply sticky top-0 z-30 px-5 pt-5 pb-3;
+    background: linear-gradient(180deg, rgba(12, 18, 32, 0.98) 70%, rgba(12, 18, 32, 0) 100%);
+    backdrop-filter: blur(12px);
+}
+
+.header-content {
+    @apply flex items-center justify-between mb-4;
+}
+
+.header-left {
+    @apply flex items-center gap-3;
+}
+
+.avatar {
+    @apply w-11 h-11 rounded-full flex items-center justify-center text-white font-bold text-base flex-shrink-0;
+    background: linear-gradient(135deg, #0064A4, #FFD200);
+    box-shadow: 0 4px 12px rgba(0, 100, 164, 0.35);
+}
+
+.greeting-block {
+    @apply min-w-0;
+}
+
+.greeting-text {
+    @apply text-lg font-bold text-white truncate;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.greeting-suggestion {
+    @apply text-xs text-blue-200/50 truncate;
+}
+
+.logout-btn {
+    @apply w-9 h-9 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-200 flex-shrink-0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(191, 219, 254, 0.4);
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.logout-btn svg {
+    @apply w-4 h-4;
+}
+
+/* Category strip */
+.category-strip {
+    @apply flex gap-2 overflow-x-auto pb-2;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.category-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.category-chip {
+    @apply flex items-center gap-1.5 py-2 px-3.5 rounded-full text-xs font-medium whitespace-nowrap cursor-pointer transition-all duration-200 flex-shrink-0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(191, 219, 254, 0.5);
+}
+
+.category-chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(191, 219, 254, 0.8);
+}
+
+.category-chip.active {
+    @apply text-white font-semibold;
+    background: rgba(0, 100, 164, 0.25);
+    border-color: rgba(0, 100, 164, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 100, 164, 0.2);
+}
+
+.cat-icon {
+    @apply text-sm;
+}
+
+.cat-label {
+    @apply text-xs;
+}
+
+/* MAIN */
+.main-content {
+    @apply flex-1 px-5 pt-4;
+}
+
+/* Section */
+.section-header {
+    @apply flex items-center justify-between mb-4;
+}
+
+.section-title {
+    @apply text-base font-bold text-white flex items-center gap-2;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.title-icon {
+    @apply text-lg;
+}
+
+.resource-count {
+    @apply text-xs text-blue-200/40;
+}
+
+/* Resource grid */
+.resource-grid {
+    @apply grid gap-3;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .resource-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.extra-resources {
+    @apply mt-3;
+    animation: fadeInGrid 0.4s ease-out;
+}
+
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Show more */
+.show-more-section {
+    @apply flex justify-center mt-5;
+}
+
+.show-more-btn {
+    @apply flex items-center gap-2 py-2.5 px-5 rounded-full text-sm font-medium cursor-pointer transition-all duration-200;
+    color: rgba(0, 180, 255, 0.7);
+    background: rgba(0, 100, 164, 0.1);
+    border: 1px solid rgba(0, 100, 164, 0.2);
+}
+
+.show-more-btn:hover {
+    background: rgba(0, 100, 164, 0.2);
+}
+
+.expand-arrow {
+    @apply w-4 h-4 transition-transform duration-300;
+}
+
+.expand-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+/* SEARCH DOCK */
+.search-dock {
+    @apply fixed bottom-0 left-0 right-0 z-40 px-4 py-4;
+    background: linear-gradient(0deg, rgba(12, 18, 32, 0.98) 60%, rgba(12, 18, 32, 0) 100%);
+}
+
+.search-dock.focused {
+    background: rgba(12, 18, 32, 0.98);
+}
+
+.search-inner {
+    @apply flex items-center gap-3 py-3.5 px-5 rounded-2xl mx-auto max-w-2xl transition-all duration-300;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.search-dock.focused .search-inner {
+    border-color: rgba(0, 100, 164, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 100, 164, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+    @apply w-5 h-5 flex-shrink-0;
+    color: rgba(191, 219, 254, 0.35);
+}
+
+.search-dock.focused .search-icon {
+    color: rgba(0, 180, 255, 0.6);
+}
+
+.search-field {
+    @apply flex-1 bg-transparent text-white text-base outline-none;
+}
+
+.search-field::placeholder {
+    color: rgba(191, 219, 254, 0.35);
+}
+
+.clear-btn {
+    @apply w-7 h-7 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-200;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: rgba(191, 219, 254, 0.5);
+}
+
+.clear-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.clear-btn svg {
+    @apply w-3.5 h-3.5;
+}

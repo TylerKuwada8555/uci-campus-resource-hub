@@ -1,0 +1,87 @@
+<div class="home-container">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="avatar">
+                    {{ user()?.name?.charAt(0)?.toUpperCase() || 'A' }}
+                </div>
+                <div class="greeting-block">
+                    <h1 class="greeting-text">{{ greeting() }}</h1>
+                    <p class="greeting-suggestion">What about {{ suggestion() }}</p>
+                </div>
+            </div>
+            <button id="logout-btn" class="logout-btn" (click)="logout()" title="Sign Out">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Category filters -->
+        <div class="category-strip">
+            <button *ngFor="let cat of categories" (click)="selectCategory(cat.key)"
+                [class.active]="selectedCategory() === cat.key" class="category-chip">
+                <span class="cat-icon">{{ cat.icon }}</span>
+                <span class="cat-label">{{ cat.label }}</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Recommended Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">⚡</span>
+                    Recommended for You
+                </h2>
+                <span class="resource-count">{{ filteredResources().length }} resources</span>
+            </div>
+
+            <div class="resource-grid">
+                <app-resource-card *ngFor="let resource of topResources(); trackBy: trackByName"
+                    [resource]="resource" />
+            </div>
+
+            <!-- Show more -->
+            <div *ngIf="remainingResources().length > 0" class="show-more-section">
+                <button class="show-more-btn" (click)="toggleShowAll()">
+                    {{ showAllResources() ? 'Show less' : 'Show all ' + filteredResources().length + ' resources' }}
+                    <svg class="expand-arrow" [class.rotated]="showAllResources()" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Remaining resources -->
+            <div *ngIf="showAllResources()" class="resource-grid extra-resources">
+                <app-resource-card *ngFor="let resource of remainingResources(); trackBy: trackByName"
+                    [resource]="resource" />
+            </div>
+        </section>
+    </main>
+
+    <!-- BOTTOM SEARCH BAR -->
+    <div class="search-dock" [class.focused]="isSearchFocused()">
+        <div class="search-inner">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input id="search-input" type="text" [ngModel]="searchQuery()" (ngModelChange)="onSearch($event)"
+                (focus)="isSearchFocused.set(true)" (blur)="isSearchFocused.set(false)"
+                placeholder="Or I need to know..." class="search-field" />
+            <button *ngIf="searchQuery()" (click)="onSearch('')" class="clear-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
