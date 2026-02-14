@@ -1,0 +1,72 @@
+<div class="login-container">
+  <!-- Animated background particles -->
+  <div class="particles">
+    <div class="particle" *ngFor="let i of [1,2,3,4,5,6,7,8]" [style.--delay]="i * 0.5 + 's'"></div>
+  </div>
+
+  <div class="login-card">
+    <!-- Logo -->
+    <div class="logo-section">
+      <div class="logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="url(#grad)"/>
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="48" y2="48">
+              <stop offset="0%" stop-color="#0064A4"/>
+              <stop offset="100%" stop-color="#FFD200"/>
+            </linearGradient>
+          </defs>
+          <path d="M24 12L14 20V28L24 36L34 28V20L24 12Z" fill="white" opacity="0.9"/>
+          <path d="M24 16L18 21V27L24 32L30 27V21L24 16Z" fill="url(#grad)" opacity="0.6"/>
+        </svg>
+      </div>
+      <h1 class="app-title">Campus Hub</h1>
+      <p class="app-subtitle">UCI Services & Resources at your fingertips</p>
+    </div>
+
+    <!-- Sign In Button -->
+    <button
+      id="sign-in-btn"
+      (click)="onSignIn()"
+      [disabled]="isLoading"
+      class="sign-in-btn"
+    >
+      <span *ngIf="!isLoading" class="btn-content">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        Sign In with UCI NetID
+      </span>
+      <span *ngIf="isLoading" class="btn-loading">
+        <div class="spinner"></div>
+        Signing in...
+      </span>
+    </button>
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>Welcome, Anteaters 🐜</span>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature-item">
+        <span class="feature-icon">🎯</span>
+        <span class="feature-text">Personalized resource recommendations</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🔍</span>
+        <span class="feature-text">Search 100+ campus services</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">⚡</span>
+        <span class="feature-text">Quick access to what you need</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <p class="footer-text">University of California, Irvine</p>
+</div>

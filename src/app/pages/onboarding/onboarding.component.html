@@ -1,0 +1,121 @@
+<div class="onboarding-container">
+    <!-- Background -->
+    <div class="bg-gradient"></div>
+
+    <div class="onboarding-card">
+        <!-- Progress bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="(currentStep / 3) * 100"></div>
+        </div>
+
+        <!-- Header -->
+        <div class="card-header">
+            <h1 class="title">Let's personalize your experience</h1>
+            <p class="subtitle">Step {{ currentStep }} of 3 — Tell us about yourself so we can recommend the best
+                resources</p>
+        </div>
+
+        <!-- Step 1: Name -->
+        <div class="step-content" *ngIf="currentStep === 1">
+            <div class="form-group">
+                <label for="name-input" class="form-label">What's your name?</label>
+                <input id="name-input" type="text" [(ngModel)]="profile.name" placeholder="e.g. Peter Anteater"
+                    class="form-input" autofocus />
+            </div>
+            <button id="next-step-1" (click)="nextStep()" [disabled]="!profile.name.trim()" class="primary-btn">
+                Continue
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Step 2: Major & Year -->
+        <div class="step-content" *ngIf="currentStep === 2">
+            <div class="form-group">
+                <label for="major-select" class="form-label">What's your major?</label>
+                <select id="major-select" [(ngModel)]="profile.major" class="form-select">
+                    <option value="" disabled selected>Select your major</option>
+                    <option *ngFor="let major of majors" [value]="major">{{ major }}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year-select" class="form-label">What year are you?</label>
+                <div class="year-grid">
+                    <button *ngFor="let year of years" (click)="profile.year = year"
+                        [class.selected]="profile.year === year" class="year-chip">
+                        {{ year }}
+                    </button>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button (click)="prevStep()" class="secondary-btn">Back</button>
+                <button id="next-step-2" (click)="nextStep()" [disabled]="!profile.major || !profile.year"
+                    class="primary-btn">
+                    Continue
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: International Status -->
+        <div class="step-content" *ngIf="currentStep === 3">
+            <div class="form-group">
+                <label class="form-label">Are you an international student?</label>
+                <div class="toggle-cards">
+                    <button id="intl-yes" (click)="profile.isInternational = true"
+                        [class.selected]="profile.isInternational === true" class="toggle-card">
+                        <span class="toggle-emoji">🌍</span>
+                        <span class="toggle-label">Yes</span>
+                        <span class="toggle-desc">I'm an international student</span>
+                    </button>
+                    <button id="intl-no" (click)="profile.isInternational = false"
+                        [class.selected]="profile.isInternational === false" class="toggle-card">
+                        <span class="toggle-emoji">🏠</span>
+                        <span class="toggle-label">No</span>
+                        <span class="toggle-desc">I'm a domestic student</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="summary-card" *ngIf="isFormValid">
+                <h3 class="summary-title">Your Profile</h3>
+                <div class="summary-row">
+                    <span class="summary-label">Name</span>
+                    <span class="summary-value">{{ profile.name }}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Major</span>
+                    <span class="summary-value">{{ profile.major }}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Year</span>
+                    <span class="summary-value">{{ profile.year }}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">International</span>
+                    <span class="summary-value">{{ profile.isInternational ? 'Yes' : 'No' }}</span>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button (click)="prevStep()" class="secondary-btn">Back</button>
+                <button id="submit-profile" (click)="onSubmit()" [disabled]="!isFormValid || isSubmitting"
+                    class="primary-btn submit">
+                    <span *ngIf="!isSubmitting">
+                        Get Started 🚀
+                    </span>
+                    <span *ngIf="isSubmitting" class="loading-text">
+                        <div class="spinner"></div>
+                        Setting up...
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
