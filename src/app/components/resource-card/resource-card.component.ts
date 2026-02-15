@@ -20,10 +20,6 @@ export class ResourceCardComponent {
         return this.resourceService.getCategoryLabel(this.resource.category);
     }
 
-    get categoryIcon(): string {
-        return this.resourceService.getCategoryIcon(this.resource.category);
-    }
-
     toggleExpand(): void {
         this.isExpanded = !this.isExpanded;
     }

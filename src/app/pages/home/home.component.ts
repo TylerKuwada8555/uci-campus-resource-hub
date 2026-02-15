@@ -26,15 +26,15 @@ export class HomeComponent {
     selectedCategory = signal<string | null>(null);
 
     categories = [
-        { key: null, label: 'All', icon: '✨' },
-        { key: 'basic_needs', label: 'Basic Needs', icon: '🍎' },
-        { key: 'health', label: 'Health', icon: '💚' },
-        { key: 'academic', label: 'Academic', icon: '📚' },
-        { key: 'career', label: 'Career', icon: '💼' },
-        { key: 'financial', label: 'Financial', icon: '💰' },
-        { key: 'housing', label: 'Housing', icon: '🏠' },
-        { key: 'accommodations', label: 'Accessibility', icon: '♿' },
-        { key: 'recreation', label: 'Recreation', icon: '🏃' }
+        { key: null, label: 'All'},
+        { key: 'basic_needs', label: 'Basic Needs'},
+        { key: 'health', label: 'Health'},
+        { key: 'academic', label: 'Academic'},
+        { key: 'career', label: 'Career'},
+        { key: 'financial', label: 'Financial'},
+        { key: 'housing', label: 'Housing'},
+        { key: 'accommodations', label: 'Accessibility'},
+        { key: 'recreation', label: 'Recreation'}
     ];
 
     filteredResources = computed(() => {

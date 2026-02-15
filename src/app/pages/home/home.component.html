@@ -24,7 +24,6 @@
         <div class="category-strip">
             <button *ngFor="let cat of categories" (click)="selectCategory(cat.key)"
                 [class.active]="selectedCategory() === cat.key" class="category-chip">
-                <span class="cat-icon">{{ cat.icon }}</span>
                 <span class="cat-label">{{ cat.label }}</span>
             </button>
         </div>
@@ -36,7 +35,6 @@
         <section class="section">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="title-icon">⚡</span>
                     Recommended for You
                 </h2>
                 <span class="resource-count">{{ filteredResources().length }} resources</span>

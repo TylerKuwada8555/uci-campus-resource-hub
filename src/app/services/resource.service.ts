@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Resource, UserProfile } from '../models/user.model';
 import { AuthService } from './auth.service';
+import { ApiService } from './api.service';
 import resourceData from '../../../data/uci_resources.json';
 
 @Injectable({
@@ -8,6 +9,7 @@ import resourceData from '../../../data/uci_resources.json';
 })
 export class ResourceService {
     private authService = inject(AuthService);
+    private apiService = inject(ApiService)
     private allResources: Resource[] = resourceData as Resource[];
 
     getResources(): Resource[] {
@@ -182,19 +184,5 @@ export class ResourceService {
             'recreation': 'Recreation'
         };
         return labels[category] || category;
-    }
-
-    getCategoryIcon(category: string): string {
-        const icons: Record<string, string> = {
-            'basic_needs': '🍎',
-            'health': '💚',
-            'accommodations': '♿',
-            'career': '💼',
-            'financial': '💰',
-            'academic': '📚',
-            'housing': '🏠',
-            'recreation': '🏃'
-        };
-        return icons[category] || '📌';
     }
 }
