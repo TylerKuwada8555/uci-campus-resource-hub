@@ -33,8 +33,13 @@
    ```bash
    npm start
    ```
+4. **Start backend**
+   ```bash
+   cd data
+   uvicorn db:app --reload
+   ```
 
-4. **Open in browser**
+5. **Open in browser**
 
    Navigate to **[http://localhost:4200](http://localhost:4200)**
 
