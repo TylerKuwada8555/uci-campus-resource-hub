@@ -28,15 +28,34 @@ cur.execute("CREATE INDEX IF NOT EXISTS idx_word ON inverted_index(word)")
 conn.close()
 app = FastAPI()
 
+class QueryObject(BaseModel):
+    query: str
+    name: str
+    year: int
+    major: str
+    domestic: bool
+
 def get_db():
     conn = s3.connect("resources.db")
     return conn
 
-@app.get("/api/query")
-def query(query_term: str):
+@app.post("/api/query")
+def query(query_object: QueryObject):
     db = get_db()
-    cursor = db.cur()
-    
+    cursor = db.cursor()
+
+    query_term = query_object['query'].lower()
+    query_term = remove_punctuation(query_term)
+    tokens = query_term.split()
+
+    # cursor.execute("""
+    # SELECT p.url, p.title
+    # FROM pages p
+    # JOIN inverted_index i ON p.id = i.page_id
+    # WHERE i.word = 'machine'
+    # ORDER BY i.frequency DESC;
+    # """)
+
     return {"message": "Hello from Python backend"}
 
 
