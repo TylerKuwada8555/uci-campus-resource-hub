@@ -1,6 +1,8 @@
 .gitignore
 plan.txt
 resources.db
+resources.index
+ids.npy
 # Compiled output
 /dist
 /tmp

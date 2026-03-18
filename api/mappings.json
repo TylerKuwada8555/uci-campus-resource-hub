@@ -1,0 +1,47 @@
+{
+    "major": {
+            "computer science": ["ics", "computer", "information and computer sciences", "engineering"],
+            "informatics": ["ics",  "computer", "information and computer sciences"],
+            "software engineering": ["ics",  "computer", "engineering", "information and computer sciences"],
+            "data science": ["ics",  "computer", "information and computer sciences"],
+            "electrical engineering": ["engineering", "samueli"],
+            "mechanical engineering": ["engineering", "samueli"],
+            "civil engineering": ["engineering", "samueli"],
+            "biology": ["biological sciences", "bio"],
+            "chemistry": ["physical sciences"],
+            "physics": ["physical sciences"],
+            "mathematics": ["physical sciences"],
+            "psychology": ["social sciences"],
+            "economics": ["social sciences"],
+            "political science": ["social sciences"],
+            "business": ["merage", "business"],
+            "nursing": ["nursing"],
+            "education": ["education"],
+            "art": ["arts", "claire trevor"],
+            "humanities": ["humanities"],
+            "public health": ["public health"],
+            "social ecology": ["social ecology"],
+            "pharmaceutical sciences": ["pharmacy", "pharmaceutical"],
+            "law": ["law"],
+            "medicine": ["medicine"],
+            "undeclared": ["undeclared"]
+    },
+    "year": {
+        "freshman": ["freshman", "first year", "underclassmen"],
+        "sophomore": ["sophomore", "second year", "underclassmen"],
+        "junior": ["junior", "third year", "upperclassmen"],
+        "senior": ["senior", "fourth year", "fifth year", "upperclassmen"],
+        "graduate": ["graduate"]
+    },
+    "international": {
+        
+    },
+    "category": {
+        "academic": ["class", "grade"],
+        "recreation": ["club", "event"],
+        "financial": ["money", "scholarship"],
+        "health": ["medical", "doctor"],
+        "basic_needs": ["food", "housing"],
+        "accommodation": ["disability"]
+    }
+}

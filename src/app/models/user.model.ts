@@ -13,7 +13,6 @@ export interface Resource {
     description: string;
     target_audience: string;
     source_url: string;
-    // Computed properties for display
-    relevanceScore?: number;
+    score?: number;
     badges?: string[];
 }

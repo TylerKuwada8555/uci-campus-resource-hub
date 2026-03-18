@@ -6,6 +6,8 @@ import { AuthService } from '../../services/auth.service';
 import { ResourceService } from '../../services/resource.service';
 import { ResourceCardComponent } from '../../components/resource-card/resource-card.component';
 import { Resource } from '../../models/user.model';
+import { toSignal, toObservable } from '@angular/core/rxjs-interop';
+import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -24,6 +26,15 @@ export class HomeComponent {
     searchQuery = signal('');
     isSearchFocused = signal(false);
     selectedCategory = signal<string | null>(null);
+    resources = toSignal(
+        toObservable(this.searchQuery).pipe(
+            startWith(''),
+            debounceTime(300),
+            distinctUntilChanged(),
+            switchMap(query => this.resourceService.searchResources(query))
+        ),
+        { initialValue: [] as Resource[] }
+    );
 
     categories = [
         { key: null, label: 'All'},
@@ -38,29 +49,15 @@ export class HomeComponent {
     ];
 
     filteredResources = computed(() => {
-        let resources: Resource[];
-
-        const query = this.searchQuery();
-        if (query.trim()) {
-            resources = this.resourceService.searchResources(query);
-        } else {
-            resources = this.resourceService.getRankedResources();
-        }
-
         const category = this.selectedCategory();
+
+        let resources = this.resources();
+
         if (category) {
             resources = resources.filter(r => r.category === category);
         }
 
         return resources;
-    });
-
-    topResources = computed(() => {
-        return this.filteredResources().slice(0, 6);
-    });
-
-    remainingResources = computed(() => {
-        return this.filteredResources().slice(6);
     });
 
     showAllResources = signal(false);
@@ -98,7 +95,7 @@ export class HomeComponent {
         this.showAllResources.update(v => !v);
     }
 
-    trackByName(index: number, resource: Resource): string {
+    trackByName(resource: Resource): string {
         return resource.name;
     }
 
