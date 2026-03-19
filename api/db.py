@@ -27,6 +27,13 @@ app.add_middleware(
 def query(query_object: QueryObject):
     db = get_db()
     cursor = db.cursor()
+    query_object = QueryObject(
+        query = query_object.query.lower(),
+        name = query_object.name.lower(),
+        major = query_object.major.lower(),
+        year = query_object.year.lower(),
+        domestic=query_object.domestic
+    )
 
     if query_object.query and query_object.query.strip():
         query_vec = model.encode(query_object.query).astype(np.float32)

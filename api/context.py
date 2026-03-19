@@ -31,18 +31,19 @@ def cosine_similarity(a, b):
 
 def contextual_boost(result, mappings, major, year, is_international):
     score = 0
-    text = (result['name'] + " " + result['description']).lower()
+    text = (result['name'] + " " + result['description'] + " " + result['target_audience']).lower()
 
     if major in mappings['major']:
-        if any(term in text for term in mappings['major'][major]):
-            score += 2
+        if any(term.lower() in text for term in mappings['major'][major]):
+            score += 3
+            print("major: " + major)
 
     if year in mappings['year']:
-        if any(term in text for term in mappings['year'][year]):
-            score += 1.5
+        if any(term.lower() in text for term in mappings['year'][year]):
+            score += 2.5
 
     if is_international:
-        if any(term in text for term in mappings['international']):
+        if any(term.lower() in text for term in mappings['international']):
             score += 1.5
 
     return score
@@ -73,11 +74,11 @@ def add_context(raw_results, query_object: QueryObject):
             not query_object.domestic
         )
 
-        text = (r['name'] + " " + r['description']).lower()
+        text = (r['name'] + " " + r['description'] + " " + r['target_audience']).lower()
         word_match_score = sum(1 for w in query_words if w in text)
         word_match_score *= 2.0
 
-        score = semantic * 5 + context + word_match_score
+        score = semantic * 4 + context + word_match_score
 
         r_copy = r.copy()
         r_copy.pop('embedding', None)
