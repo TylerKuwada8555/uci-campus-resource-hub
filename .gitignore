@@ -3,6 +3,8 @@ plan.txt
 resources.db
 resources.index
 ids.npy
+__pycache__/
+*.py[cod]
 # Compiled output
 /dist
 /tmp

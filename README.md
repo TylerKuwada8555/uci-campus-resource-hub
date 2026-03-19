@@ -1,45 +1,63 @@
 
-
 ## Getting Started
+
+This project has:
+
+- an Angular frontend
+- a FastAPI backend
+
+You need both running for the full app.
 
 ### Prerequisites
 
-- **Node.js** ≥ 18 (LTS recommended, e.g. v20 or v22)
-- **npm** ≥ 9
+- Node.js >= 18
+- npm >= 9
+- Python 3
 
-> Check your versions:
-> ```bash
-> node -v
-> npm -v
-> ```
+### Setup
 
-### Installation
+```bash
+git clone https://github.com/TylerKuwada8555/uci-campus-resource-hub.git
+cd uci-campus-resource-hub
+npm install
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+```
 
-1. **Clone the repository**
+### One-Time Backend Data Build
 
-   ```bash
-   git clone https://github.com/TylerKuwada8555/uci-campus-resource-hub.git
-   cd uci-campus-resource-hub
-   ```
+Run this only if `api/resources.db`, `api/resources.index`, or `api/ids.npy` do not exist:
 
-2. **Install dependencies**
+```bash
+cd api
+python3 resource_import.py
+python3 build_index.py
+cd ..
+```
 
-   ```bash
-   npm install
-   ```
+### Run the App
 
-3. **Start the dev server**
+Terminal 1:
 
-   ```bash
-   npm start
-   ```
-4. **Start backend**
-   ```bash
-   cd data
-   uvicorn db:app --reload
-   ```
+```bash
+source .venv/bin/activate
+cd api
+python3 -m uvicorn db:app --reload
+```
 
-5. **Open in browser**
+Terminal 2:
 
-   Navigate to **[http://localhost:4200](http://localhost:4200)**
+```bash
+npm start
+```
 
+Open [http://localhost:4200](http://localhost:4200).
+
+## Notes
+
+- The backend runs on [http://localhost:8000](http://localhost:8000).
+- Login/onboarding is frontend-only and uses browser `localStorage` with the key `campus_hub_user`.
+- If that saved profile already exists, the app will go straight to the home page.
+- To test onboarding again, log out, clear `campus_hub_user`, or use an incognito window.
