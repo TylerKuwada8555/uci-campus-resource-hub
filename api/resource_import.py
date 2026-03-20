@@ -26,11 +26,13 @@ conn.close()
 
 with open("uci_resources.json", "r", encoding="utf-8") as f:
     resources = json.load(f)
+with open("new_resources.json", "r", encoding="utf-8") as f:
+    new_resources = json.load(f)
 
 conn = s3.connect("resources.db")
 cursor = conn.cursor()
 
-for r in resources:
+for r in resources + new_resources:
     text = r["name"] + " " + r["description"] + " " + r["target_audience"]
 
     embedding = model.encode(text).tolist()
