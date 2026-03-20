@@ -5,10 +5,10 @@ import json
 import re
 import time
 
-# ──────────────────────────────────────────────
-# SEED URLs — one per category/department
-# The crawler stays within each seed's domain
-# ──────────────────────────────────────────────
+
+
+
+
 SEEDS = [
     ("basic_needs",     "https://basicneeds.uci.edu"),
     ("health",          "https://counseling.uci.edu"),
@@ -27,8 +27,8 @@ SEEDS = [
     ("financial",       "https://emergency.uci.edu"),   # Emergency funds
 ]
 
-MAX_PAGES_PER_SEED = 8   # how many pages to visit per seed domain
-REQUEST_DELAY      = 1.0  # seconds between requests (be polite)
+MAX_PAGES_PER_SEED = 8   
+REQUEST_DELAY      = 1.0  
 HEADERS = {
     "User-Agent": "UCI-Campus-Resource-Crawler/1.0 (student project)"
 }
@@ -81,21 +81,21 @@ def extract_location(raw_text):
     )
     if match:
         return match.group(0).strip()
-    # fallback: just mention Irvine
+    
     if "irvine" in raw_text.lower():
         return "UCI Campus, Irvine, CA 92697"
     return "UCI Campus, Irvine, CA"
 
 
 def extract_description(soup):
-    # Try meta description first
+    
     meta = soup.find("meta", attrs={"name": "description"})
     if meta and meta.get("content", "").strip():
         desc = meta["content"].strip()
         if len(desc) > 30:
             return desc[:300]
 
-    # Try first substantial paragraph
+    
     for p in soup.find_all("p"):
         text = p.get_text(" ", strip=True)
         if len(text) > 60:
@@ -105,7 +105,7 @@ def extract_description(soup):
 
 
 def extract_name(soup, url):
-    # Try h1 first
+    
     h1 = soup.find("h1")
     if h1:
         name = h1.get_text(" ", strip=True)
@@ -116,7 +116,7 @@ def extract_name(soup, url):
     title = soup.find("title")
     if title:
         name = title.get_text(" ", strip=True)
-        # Strip site suffix like " | UCI" or " - University of California"
+        
         name = re.split(r"\s*[\|\-–]\s*(?:UCI|University)", name)[0].strip()
         if 5 < len(name) < 100:
             return name
@@ -188,18 +188,18 @@ def get_links(html, base_url):
         if href.startswith(("#", "javascript", "mailto", "tel")):
             continue
         full = urljoin(base_url, href)
-        # only keep same-domain http/https links
+        
         if full.startswith("http") and same_domain(full, base_url):
-            # strip query strings and fragments to avoid duplicates
+            
             parsed = urlparse(full)
             clean = parsed.scheme + "://" + parsed.netloc + parsed.path.rstrip("/")
             links.add(clean)
     return links
 
 
-# ──────────────────────────────────────────────
-# Main crawl loop
-# ──────────────────────────────────────────────
+
+
+
 
 def crawl():
     all_resources = []
@@ -235,7 +235,7 @@ def crawl():
                 contact     = extract_contact_info(soup, raw_text)
                 audience    = infer_target_audience(raw_text, category)
 
-                # Deduplicate by name
+                
                 if name not in seen_names:
                     seen_names.add(name)
                     all_resources.append({
@@ -250,7 +250,7 @@ def crawl():
                     count += 1
                     print(f"  ✓ added: {name}")
 
-            # Discover more links within this domain
+            
             new_links = get_links(html, seed)
             for link in new_links:
                 if link not in visited and link not in seen_urls:
