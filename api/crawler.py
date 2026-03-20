@@ -33,9 +33,9 @@ HEADERS = {
     "User-Agent": "UCI-Campus-Resource-Crawler/1.0 (student project)"
 }
 
-# ──────────────────────────────────────────────
-# Helpers
-# ──────────────────────────────────────────────
+
+
+
 
 def same_domain(url, base):
     return urlparse(url).netloc == urlparse(base).netloc
