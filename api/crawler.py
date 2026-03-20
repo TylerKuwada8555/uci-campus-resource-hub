@@ -66,7 +66,7 @@ def extract_contact_info(soup, raw_text):
     if phones:
         parts.append("Phone: " + phones[0])
     if emails:
-        # filter out noreply / generic webmaster emails
+        
         real = [e for e in emails if "noreply" not in e and "webmaster" not in e]
         if real:
             parts.append("Email: " + real[0])
